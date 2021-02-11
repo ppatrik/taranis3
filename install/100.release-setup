@@ -76,7 +76,8 @@ sub create_generic() {
 	$email    =~ s/\s//g;
 	length $email or exit 1;
 
-	my $vhost = $term->readline('taranis vhost name: ');
+	my $vhost = $old_config->{vhost}
+		|| $term->readline('taranis vhost name: ');
 	$vhost    =~ s/\s//g;
 	length $vhost or exit 1;
 
